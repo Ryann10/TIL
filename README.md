@@ -1,6 +1,6 @@
 # Today I Learned
 
-Commit what I learned today with the following rules. [thoughtbot til 참고](https://github.com/thoughtbot/til)
+Commit what I learned today with the following rules. [referred by thoughtbot til](https://github.com/thoughtbot/til)
 
 ## Basic rules
 - Create document with [GFM (Github Flavored Markdown)](https://help.github.com/articles/github-flavored-markdown/). (extension `.md`)
