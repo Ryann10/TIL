@@ -1,4 +1,5 @@
-### How to log all queries
+How to log all queries
+----------
 
 [https://docs.mongodb.com/manual/reference/method/db.setProfilingLevel](https://docs.mongodb.com/manual/reference/method/db.setProfilingLevel)
 
