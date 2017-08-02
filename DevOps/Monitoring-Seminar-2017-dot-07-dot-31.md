@@ -30,3 +30,33 @@ DBMS > WEB SERVER > IO(Hard disk) > NETWORK > CODE(Business Logic)
 
 **해결책** : 표본 서버(Web Server 1대 + DBMS 1대)만 선택하여 모니터링
 
+
+클라우드 환경에서의 모니터링
+========
+
+클라우드 환경에서 수집해야하는 지표
+----
+- IOPS
+- Disk Queue length(win) / iowait(linux)
+- CPU steal time
+
+일반적인 서버 다운 인지 방법
+-----
+- 서버에서 데이터가 들어오지 않을때
+- But, 서버 가용성과 네트워크 가용성은 별도로 모니터링 해야함
+
+**Utilization Saturation Error 3가지 지표를 만들어서 봐야함**
+
+프로세스 모니터링
+-----
+- 그룹별로 모니터링 
+- 그룹 정책 수립(최소&최대 수, CPU 사용량 등)
+- TCP connection 상태 모니터링
+- CLOSE_WAIT 값 확인 필요
+
+모니터링 시스템 구축 시 유의사항
+------
+- 데이터베이스는 타임 시리즈 디비 > RDB
+- 데이터 전송 방식은 20초 이내 짧은 조기로 stream으로 조금씩, 1분 마다 모아서 보내면 cpu 사용률이 1분씩마다 튄다
+- 모니터링 부하를 적게 주기 위해 Golang 을 agent 언어로 많이 사용함
+- 시스템의 완결성을 보장(클라우드 가용성 보장)을 위해 업체(AWS, Azure, GoogleAppEngine) 을 같이 쓰는 방법도 있다
